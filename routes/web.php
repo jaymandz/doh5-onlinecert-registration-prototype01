@@ -5,6 +5,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +35,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+# Routes created by Jay Mandane
+Route::get('/importCsv', function(Request $request) {
+    return Inertia::render('ImportCsv', [
+        'csrfToken' => csrf_token(),
+    ]);
+});
+
+Route::post('/importCsv', function(Request $request) {
+    return file_get_contents($request->file('csv_file'));
 });
 
 require __DIR__.'/auth.php';
