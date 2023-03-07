@@ -25,11 +25,10 @@ const form = useForm({
     selected_prog_type: null
 });
 
+const program_list = ref([]);
 const facility_list = ref([]);
 const retrievedToolInfo = ref([]);
 
-// const selectedFaciType = '';
-// const facilityName = '';
 
 const test = (log1, log2) => {
     console.log(log1 + ' ' + log2);
@@ -49,6 +48,14 @@ onMounted(() => {
         response.json()
         ).then(response => (
            program_list.value = Object.values(response)
+            // console.log(facilityTypes.value[0].facilityTypeName)
+        )
+    ));
+
+    fetch('/facilities').then(response => (
+        response.json()
+        ).then(response => (
+           facility_list.value = Object.values(response)
             // console.log(facilityTypes.value[0].facilityTypeName)
         )
     ));
@@ -100,21 +107,31 @@ const onChange = (event) => {
                 <div class="mt-16">
                 <div>
                
-                <p>Facility Name</p>
-                <TextInput
-                    id="facility_name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.facility_name"
-                    autofocus
-                />
+               <p>Facility Name</p>
+                    <div class="inline-block relative w-full py-4 flex-1">
+                        <select
+                            class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                            v-model="form.selected_facility"
+                            @change="onChange($event)">
+                            <option
+                                v-for="item in facility_list"
+                                :value="item.id"
+                                :key="item.id"
+                            >
+                                {{ '[' + item.id + ']' + ' ' + item.facility_name }}
+                            </option>
+                    
+                        </select>
+                
+                </div>
                     
             </div>
             <br/>
             <!-- <li v-for="fType in facilityTypes">
             {{ fType.facilityTypeName }}
             </li> -->
-            <p>Facility Type</p>
+           
+            <p>Program Name</p>
             <div class="inline-block relative w-full py-4 flex-1">
                 <select
                 class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
@@ -132,7 +149,6 @@ const onChange = (event) => {
                 </select>
           
             </div>
-            {{ selected_faci_type }}
 
            
 

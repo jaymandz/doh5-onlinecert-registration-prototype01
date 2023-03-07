@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AssessmentTools;
 use App\Http\Requests\StoreAssessmentToolsRequest;
 use App\Http\Requests\UpdateAssessmentToolsRequest;
-use App\Models\FacilityType;
+use App\Models\Facilities;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 class AssessmentToolsController extends Controller

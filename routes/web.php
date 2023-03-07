@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProgramsController;
+use App\Http\Controllers\FacilitiesController;
 use App\Http\Controllers\AssessmentToolsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -42,7 +43,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/programs', [ProgramsController::class, 'index']);
-
+Route::get('/facilities', [FacilitiesController::class, 'index']);
 
 // Assessment Tools [AssessmentToolController::class, 'index']
 //Route::get('/assessment-tool', [AssessmentToolsController::class, 'index'])->name('assessment-tool.show');
