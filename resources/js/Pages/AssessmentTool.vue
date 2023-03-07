@@ -16,7 +16,8 @@ const props = defineProps({
     canRegister: Boolean,
     laravelVersion: String,
     phpVersion: String,
-    tools: Object
+    tools: Object,
+    facility_data: Object
 });
 
 
@@ -62,18 +63,18 @@ const tools_by_faci = ref([]);
 </script>
 
 <template>
+<GuestLayout>
    <Head title="Assessment Form"/>
    <form @submit.prevent="submit">
         <!-- <div class="max-w-7xl mx-auto p-6 lg:p-8"> -->
        
    
             <div class="mt-16">
-               
+               <label for="assessment-tool">ASSESSMENT TOOL</label>
                 <div>
-                    {{ receivedToolData }}
-                <label for="assessment-tool">Facility Name: {{tools.facility_name}} </label><br/><br/>
-                <label for="assessment-tool">ASSESSMENT TOOL</label>
-                {{newData.selected_faci_type}}
+                
+                <label for="assessment-tool">Facility Name: {{facility_data.facility_name}} </label><br/><br/>
+                
                 <!-- <TextInput
                     id="email"
                     type="text"
@@ -134,6 +135,7 @@ const tools_by_faci = ref([]);
 
         
    </form>
+   </GuestLayout>
 </template>
 
 <style>

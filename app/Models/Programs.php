@@ -13,4 +13,9 @@ class Programs extends Model
         'program_alias',
         'program_full_name'
     ];
+
+    public function assessment_tools()
+    {
+        return $this->belongsTo(AssessmentTools::class);
+    }
 }

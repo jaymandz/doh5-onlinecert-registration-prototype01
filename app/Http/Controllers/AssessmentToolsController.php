@@ -15,12 +15,16 @@ class AssessmentToolsController extends Controller
      */
     public function index(Request $request)
     {
-        $tool = AssessmentTools::where('facility_id', $request->selected_faci_type)->first();
+        $tool = AssessmentTools::where([
+            ['facility_id', $request->selected_facility],
+            ['program_id', $request->selected_program]
+        ])->first();
+
+        $chosenFaci = Facilities::where('id', $request->selected_facility)->first();
 
         return Inertia::render('AssessmentTool', [
             'tools' => $tool,
-            'facility_name' => $request->facility_name,
-            'assessmentTool' => $request
+            'facility_data' => $chosenFaci
         ]);
     }
 

@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\FacilityType;
+use App\Models\Facilities;
+use App\Models\Programs;
 
 class AssessmentTools extends Model
 {
@@ -22,9 +23,14 @@ class AssessmentTools extends Model
         'surveyor_team_rating'    
     ];
 
-    public function facility_types()
+    public function facilities()
     {
-        return $this->belongsTo(FacilityType::class);
+        return $this->hasMany(Facilities::class);
+    }
+
+    public function programs()
+    {
+        return $this->hasMany(Programs::class);
     }
     
 }
