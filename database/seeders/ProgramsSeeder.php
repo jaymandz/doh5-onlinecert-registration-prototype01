@@ -14,8 +14,13 @@ class ProgramsSeeder extends Seeder
     public function run(): void
     {
         $data = ([
-            ['program_alias' => 'ABTC'],
-            ['program_alias' => 'TB-DOTS']
+            [
+                'program_alias' => 'ABTC',
+                'program_full_name' => 'Animal Bite Treatment Center'],
+            [
+                'program_alias' => 'TB-DOTS',
+                'program_full_name' => 'Directly Observed Therapy'
+            ]
         ]);
         
         Programs::insert($data);

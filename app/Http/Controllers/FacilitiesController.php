@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\AssessmentTools;
-use App\Models\FacilityType;
+use App\Models\Facilities;
 use App\Http\Requests\StoreFacilityTypeRequest;
 use App\Http\Requests\UpdateFacilityTypeRequest;
 
-class FacilityTypeController extends Controller
+class FacilitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return FacilityType::all();
+        return Facilities::all();
     }
 
     /**

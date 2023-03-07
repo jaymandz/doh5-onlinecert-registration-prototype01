@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('facilities', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('health_faci_code');
+            $table->string('health_faci_code');
             $table->integer('health_faci_code_short');
             $table->string('facility_name');
             $table->string('facility_major_type');

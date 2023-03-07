@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Programs extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'program_alias',
+        'program_full_name'
+    ];
 }

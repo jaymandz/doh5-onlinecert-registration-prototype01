@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('assessment_tools', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('program_id');
-            $table->unsignedBigInteger('facility_type_id');
+            $table->unsignedBigInteger('facility_id');
             $table->string('goal_number');
             $table->text('goal_criterion');
             $table->string('standard_number');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->text('surveyor_comments');    
             $table->string('surveyor_team_rating');   
 
-            $table->foreign('facility_id')->references('id')->on('facility_types');
+            $table->foreign('facility_id')->references('id')->on('facilities');
             $table->foreign('program_id')->references('id')->on('programs');
             $table->timestamps();
         });

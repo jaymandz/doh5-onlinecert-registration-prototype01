@@ -21,11 +21,11 @@ import { ref, onMounted } from 'vue'
 // });
 
 const form = useForm({
-    facility_name: null,
-    selected_faci_type: null
+    selected_facility: null,
+    selected_prog_type: null
 });
 
-const facility_types = ref([]);
+const facility_list = ref([]);
 const retrievedToolInfo = ref([]);
 
 // const selectedFaciType = '';
@@ -45,10 +45,10 @@ const routes = {
 };
 
 onMounted(() => {
-    fetch('/facility-types').then(response => (
+    fetch('/programs').then(response => (
         response.json()
         ).then(response => (
-           facility_types.value = Object.values(response)
+           program_list.value = Object.values(response)
             // console.log(facilityTypes.value[0].facilityTypeName)
         )
     ));
@@ -118,15 +118,15 @@ const onChange = (event) => {
             <div class="inline-block relative w-full py-4 flex-1">
                 <select
                 class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-                v-model="form.selected_faci_type"
+                v-model="form.selected_prog_type"
                 @change="onChange($event)"
                 >
                 <option
-                    v-for="item in facility_types"
+                    v-for="item in program_list"
                     :value="item.id"
                     :key="item.id"
                 >
-                    {{ '[' + item.id + ']' + ' ' + item.facility_type_name }}
+                    {{ '[' + item.id + ']' + ' ' + item.program_alias }}
                 </option>
             
                 </select>

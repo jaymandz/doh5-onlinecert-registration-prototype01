@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\FacilityTypeController;
+use App\Http\Controllers\ProgramsController;
 use App\Http\Controllers\AssessmentToolsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -41,7 +41,7 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/facility-types', [FacilityTypeController::class, 'index']);
+Route::get('/programs', [ProgramsController::class, 'index']);
 
 
 // Assessment Tools [AssessmentToolController::class, 'index']
