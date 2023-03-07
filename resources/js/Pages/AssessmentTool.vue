@@ -70,36 +70,31 @@ const tools_by_faci = ref([]);
        
    
             <div class="mt-16">
-               <label for="assessment-tool">ASSESSMENT TOOL</label>
+               <b><label for="assessment-tool">ASSESSMENT TOOL</label></b><br/><br/><br/>
                 <div>
                 
                 <label for="assessment-tool">Facility Name: {{facility_data.facility_name}} </label><br/><br/>
-                
-                <!-- <TextInput
+                <label for="assessment-tool">GOAL: {{tools.goal_criterion}} </label><br/><br/>
+                <InputLabel for="evid_progress">Evidence of Progress and Achievements</InputLabel>
+                <TextInput
                     id="email"
                     type="text"
                     class="mt-2 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocus
-                    autocomplete="username"
-                /> -->
+                    v-model="form.evidence_of_progress"
+                />
 
                 <!-- <InputError class="mt-2" :message="form.errors.email" /> -->
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-
-               <!-- <TextInput
+                 <InputLabel for="center_rating">Center Rating</InputLabel>
+                <TextInput
                     id="email"
                     type="text"
                     class="mt-2 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocus
-                    autocomplete="username"
-                /> -->
+                    v-model="form.center_rating"
+                />
+
 
                 <!-- <InputError class="mt-2" :message="form.errors.password" /> -->
             </div>

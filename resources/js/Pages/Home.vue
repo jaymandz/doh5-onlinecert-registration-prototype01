@@ -11,17 +11,9 @@ import Home from './Home.vue';
 import AssessmentTool from './AssessmentTool.vue';
 import { ref, onMounted } from 'vue'
 
-// const props = defineProps({
-//     facilityName: {
-//         type: String
-//     },
-//     selectedFaciType: {
-//         type: Number
-//     }
-// });
 
 const form = useForm({
-    selected_facility: null,
+    health_faci_code: null,
     selected_program: null
 });
 
@@ -107,18 +99,18 @@ const onChange = (event) => {
                 <div class="mt-16">
                 <div>
                
-               <p>Facility Name</p>
+               <p>Facility Code</p>
                     <div class="inline-block relative w-full py-4 flex-1">
                         <select
                             class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-                            v-model="form.selected_facility"
+                            v-model="form.health_faci_code"
                             @change="onChange($event)">
                             <option
                                 v-for="item in facility_list"
                                 :value="item.id"
                                 :key="item.id"
                             >
-                                {{ '[' + item.id + ']' + ' ' + item.facility_name }}
+                                {{ '[' + item.id + ']' + ' ' + item.health_faci_code }}
                             </option>
                     
                         </select>
