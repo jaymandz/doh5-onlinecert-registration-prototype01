@@ -1,4 +1,4 @@
-# doh5-lhsd-online-certification
+# DOH LHSD Online Certification
 Source code for the DOH Bicol CHD LHSD Online Certification System.
 
 ## Software requirements
