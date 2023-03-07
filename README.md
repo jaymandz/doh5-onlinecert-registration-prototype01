@@ -20,5 +20,5 @@ install all dependencies:
 $ composer install
 $ npm install
 $ php artisan migrate
-npm run dev
+$ npm run dev
 ```
