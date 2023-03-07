@@ -27,12 +27,13 @@ defineProps({
                 <div class="bg-white overflow-y-auto shadow-sm sm:rounded-lg p-6 onlinecert-content-card">
                     <form enctype="multipart/form-data" method="post">
                         <input type="hidden" name="_token" :value="csrfToken">
-                        <p class="mb-4">Upload a CSV file exported from the NHFR using the field below.</p>
+                        <p class="mb-4">Upload a CSV file exported from the National Health Facility Registry using the field below.</p>
                         <div class="mb-4">
                             <TextInput required name="csv_file" type="file"></TextInput>
                         </div>
-                        <PrimaryButton>Upload</PrimaryButton>
+                        <PrimaryButton class="mb-4">Upload</PrimaryButton>
                     </form>
+                    <div class="rounded-md bg-yellow-50 p-4 text-sm text-yellow-500">Make sure your CSV file has commas for delimiters.</div>
                 </div>
             </div>
         </div>
