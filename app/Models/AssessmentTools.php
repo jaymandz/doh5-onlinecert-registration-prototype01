@@ -12,7 +12,6 @@ class AssessmentTools extends Model
 
     protected $fillable = [
         'facility_id',
-        'facility_name',
         'goal_number',
         'goal_criterion',
         'standard_number',
