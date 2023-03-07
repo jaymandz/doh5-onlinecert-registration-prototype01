@@ -15,9 +15,7 @@ class AssessmentToolsController extends Controller
      */
     public function index(Request $request)
     {
-        
-
-        $chosenFacility = Facilities::where('health_faci_code', $request->health_faci_code)->first();
+        $chosenFacility = Facilities::where('health_faci_code', 'LIKE', "%{$request->health_faci_code}%")->first();
 
         $tool = AssessmentTools::where([
             ['facility_id', $chosenFacility->id],

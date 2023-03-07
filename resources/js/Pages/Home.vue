@@ -101,21 +101,14 @@ const onChange = (event) => {
                
                <p>Facility Code</p>
                     <div class="inline-block relative w-full py-4 flex-1">
-                        <select
-                            class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                        <TextInput
+                            id="health_faci_code"
+                            type="text"
+                            class="mt-1 block w-full"
                             v-model="form.health_faci_code"
-                            @change="onChange($event)">
-                            <option
-                                v-for="item in facility_list"
-                                :value="item.id"
-                                :key="item.id"
-                            >
-                                {{ '[' + item.id + ']' + ' ' + item.health_faci_code }}
-                            </option>
-                    
-                        </select>
+                        />
                 
-                </div>
+                    </div>
                     
             </div>
             <br/>
@@ -137,7 +130,7 @@ const onChange = (event) => {
                 >
                     {{ '[' + item.id + ']' + ' ' + item.program_alias }}
                 </option>
-            
+
                 </select>
           
             </div>
@@ -145,10 +138,10 @@ const onChange = (event) => {
            
 
             <div class="flex items-center justify-end mt-4">
-                <!-- <PrimaryButton class="ml-4" @click="test(facilityName, selectedFaciType)">
+                <PrimaryButton class="ml-4" type="submit">
                     SEND
-                </PrimaryButton> -->
-                 <button type="submit">SEND</button>
+                </PrimaryButton>
+                
             </div>
         </div> 
              
