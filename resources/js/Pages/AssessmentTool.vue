@@ -26,12 +26,18 @@ const form = useForm({
     center_rating: ''
 });
 
+const Ratings = [{ data: 'Non-compliance' }, { data: 'Incomplete' }, { data: 'Complete' }];
+let picked = ref();
+
 const submit = () => {
     form.post(route('login'), {
         onFinish: () => form.reset('password'),
     });
 };
 
+const onChange = (event) => {
+    picked = event.target.value;
+}
 
 
 const newData = computed(() => usePage().props.assessmentTools);
@@ -47,17 +53,6 @@ const routes = {
 const tools_by_faci = ref([]);
 
 
-// onMounted(() => {
-//     fetch(`/assessment-tool/${newData.selected_faci_type}`, {
-//         method: 'POST'
-//     }).then(response => (
-//         response.json()
-//         ).then(response => (
-//            tools_by_faci.value = Object.values(response),
-//            console.log(tools_by_faci)
-//         )
-//     ));
-// });
 
 
 </script>
@@ -87,14 +82,19 @@ const tools_by_faci = ref([]);
             </div>
 
             <div class="mt-4">
-                 <InputLabel for="center_rating">Center Rating</InputLabel>
-                <TextInput
+                <InputLabel for="center_rating">Center Rating</InputLabel>
+                <!-- <TextInput
                     id="email"
                     type="text"
                     class="mt-2 block w-full"
                     v-model="form.center_rating"
-                />
+                /> -->
+                <label v-for="rating in Ratings" :key="rating.data">
+                    <input type="radio" :value="rating.data" v-model="rating.data" @change="onChange($event)"/>
+                    <span>{{ rating.data }}</span>
+                </label>
 
+                    <span>Picked: {{ picked }}</span>
 
                 <!-- <InputError class="mt-2" :message="form.errors.password" /> -->
             </div>
