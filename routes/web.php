@@ -49,13 +49,17 @@ Route::middleware('auth')->group(function () {
 });
 
 # Routes created by Jay Mandane
-Route::get('/importCsv', function(Request $request) {
-    return Inertia::render('ImportCsv', [
+Route::get('/facilities', function() {
+    return Inertia::render('Facilities/List');
+});
+
+Route::get('/facilities/importCsv', function(Request $request) {
+    return Inertia::render('Facilities/ImportCsv', [
         'csrfToken' => csrf_token(),
     ]);
 });
 
-Route::post('/importCsv', function(Request $request) {
+Route::post('/facilities/importCsv', function(Request $request) {
     $facilities = Reader::createFromPath($request->csv_file, 'r');
     $facilities->setHeaderOffset(0);
 

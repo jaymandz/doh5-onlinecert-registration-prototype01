@@ -21,8 +21,8 @@ defineProps({
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <SecondaryButton class="mb-3" @click="$event.view.location.href = 'dashboard'">
-                    To dashboard
+                <SecondaryButton class="mb-3" @click="$event.view.location.href = '/facilities'">
+                    To facility list
                 </SecondaryButton>
                 <div class="bg-white overflow-y-auto shadow-sm sm:rounded-lg p-6 onlinecert-content-card">
                     <form enctype="multipart/form-data" method="post">

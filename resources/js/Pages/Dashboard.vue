@@ -4,7 +4,6 @@ import { ref } from 'vue'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
-import NavLink from '@/Components/NavLink.vue'
 import SecondaryButton from '@/Components/SecondaryButton.vue'
 
 const props = defineProps({
@@ -25,11 +24,11 @@ const isShowingImportSuccessNotif = ref(props.successType == 'sImport')
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="mb-3">
+                    <SecondaryButton @click="$event.view.location.href = '/facilities'">
+                        Manage facilities
+                    </SecondaryButton>
                     <SecondaryButton @click="$event.view.location.href = '/provinces'">
                         Manage provinces
-                    </SecondaryButton>
-                    <SecondaryButton @click="$event.view.location.href = '/importCsv'">
-                        Import CSV from NHFR
                     </SecondaryButton>
                 </div>
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg onlinecert-content-card">
