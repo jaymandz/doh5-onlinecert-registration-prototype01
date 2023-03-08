@@ -24,13 +24,12 @@ const props = defineProps({
 });
 
 
+const centerData = ref(0)
+
 const form = useForm({
     evidence_of_progress: '',
-    center_rating: ''
+    // center_rating: ''
 });
-
-const Ratings = [{ data: 'Non-compliance' }, { data: 'Incomplete' }, { data: 'Complete' }];
-let picked = ref();
 
 const submit = () => {
     form.post(route('login'), {
@@ -38,9 +37,9 @@ const submit = () => {
     });
 };
 
-const onChange = (event) => {
-    picked = event.target.value;
-}
+// const onChange = (event) => {
+//     centerData.value = 
+// }
 
 
 const newData = computed(() => usePage().props.assessmentTools);
@@ -55,8 +54,10 @@ const routes = {
 
 const tools_by_faci = ref([]);
 
-
-
+// onMounted(
+//     centerData.value = this.$refs.center_rating.value
+ 
+// )
 
 </script>
 
@@ -86,7 +87,8 @@ const tools_by_faci = ref([]);
 
             <div class="mt-4">
                 <InputLabel for="center_rating">Center Rating</InputLabel>
-                <AbtcComponents ref="center_rating"/>
+                <AbtcComponents ref="centerData" />
+                 {{ centerData }}
             </div>
 
            

@@ -27,9 +27,8 @@ defineExpose({
 })
 
 
-const onChange = (event) => {
-    center_rating = event.target.value;
-    console.log(center_rating);
+const switchSelect = (event) => {
+    center_rating = !!event.target.value;
 }
 
 
@@ -50,20 +49,15 @@ const tools_by_faci = ref([]);
 
 </script>
 
-<template>
-<GuestLayout>
-   <Head title="Assessment Form"/>
-       
-   
-            <div class="mt-16">
-              <input type="radio" name="center_rating" @change="onChange($event)" value="0"> Non-compliant
-              <input type="radio" name="center_rating" @change="onChange($event)" value="1"> Incomplete
-              <input type="radio" name="center_rating" @change="onChange($event)" value="2"> Complete
-    
-            </div>   
-
-        
-   </GuestLayout>
+<template>  
+    <div class="mt-16">
+        <label>Non-compliant</label>
+        <input type="radio" name="center_rating" v-model="center_rating" value="0" />
+        <label>Incomplete</label>
+        <input type="radio" name="center_rating" v-model="center_rating" value="1" />
+        <label>Complete</label>
+        <input type="radio" name="center_rating" v-model="center_rating" value="2" /> 
+    </div>      
 </template>
 
 <style>
