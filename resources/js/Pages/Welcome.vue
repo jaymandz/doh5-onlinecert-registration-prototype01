@@ -1,12 +1,29 @@
 <script setup>
+import { ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import Certification from '@/Svg/Certification.vue';
-import Button from '@/Components/Button.vue';
+import Check from '@/Svg/Check.vue';
 import ArrowRight from '@/Svg/ArrowRight.vue';
+import Button from '@/Components/Button.vue';
+import Modal from '@/Components/Modal.vue';
+import Input from '@/Components/Input.vue';
+import InputError from '@/Components/InputError.vue';
+import Select from '@/Components/Select.vue';
+import Label from '@/Components/Label.vue';
 
 defineProps({
     canLogin: Boolean,
 });
+
+const isOpen = ref(false);
+
+const openModal = () => {
+    isOpen.value = true
+};
+
+const closeModal = () => {
+    isOpen.value = false
+};
 </script>
 
 <template>
@@ -49,6 +66,36 @@ defineProps({
             </div>
         </div>
     </div>
+
+    <Modal :show="isOpen" title="Facility Certification" @close="closeModal">
+        <form>
+            <div class="flex flex-col space-y-3">
+                <div class="relative">
+                    <Label for="facility-code" value="Facility Code" required />
+                    <Input type="text" v-model="facility_code" placeholder="DOH00000000000000" required />
+                    <InputError v-if="facility_code" :message="facility_code" />
+                </div>
+                
+                <div class="relative">
+                    <Label for="program" value="Program" required />
+                    <Select>
+                        <option value="" selected disabled>-- Select program --</option>
+                        <option value="ABTC">ABTC</option>
+                        <option value="TB DOTS">TB DOTS</option>
+                    </Select>
+                </div>
+            </div>
+
+            <div class="mt-5 flex items-center justify-between space-x-8">
+                <span class="text-xs max-w-xs">Don't have health facility code? Check here at the <a href="https://nhfr.doh.gov.ph/" target="_blank" class="underline text-sky-600">National Health Facility Registry</a></span>
+
+                <a href="/tb-dots-assessment-tool" class="cursor-pointer flex justify-between items-center px-5 py-2 text-sm font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-slate-800 text-white bg-green-700 hover:bg-green-800 focus:ring-green-600 dark:focus:ring-green-600': category === 'primary">
+                    <Check class="fill-slate-200 h-5 w-5 mr-1" />
+                    <span>Proceed</span>
+                </a>
+            </div>
+        </form>
+    </Modal>
 </template>
 
 <style>
