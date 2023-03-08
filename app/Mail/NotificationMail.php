@@ -24,7 +24,7 @@ class NotificationMail extends Mailable
     
     public function build()
     {
-        return $this->subject('Mail from DOH ICT Unit')->view('emails.notificationMail');
+        return $this->subject('Registration for Bicol-DOH Certificate')->view('emails.notificationMail');
     }
     /**
      * Get the message envelope.

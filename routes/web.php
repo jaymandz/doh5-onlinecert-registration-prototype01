@@ -72,8 +72,9 @@ Route::middleware('auth')->group(function () {
 Route::get('send-mail', function () {
    
     $details = [
-        'title' => 'Mail from ItSolutionStuff.com',
-        'body' => 'This is for testing email using smtp'
+        'title' => 'Greetings!',
+        'body' => 'This is to inform you that we have received your request for registration
+        for certification. We will notify you with another email about the result of your submission. Thank you.'
     ];
    
     Mail::to('richfnasayao@gmail.com')->send(new App\Mail\NotificationMail($details));

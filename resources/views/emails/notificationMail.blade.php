@@ -4,9 +4,13 @@
     <title>Department of Health - ICT Unit</title>
 </head>
 <body>
-    <h1>{{ $details['title'] }}</h1>
+    <p>{{ $details['title'] }}</p><br/>
     <p>{{ $details['body'] }}</p>
    
-    <p>Thank you</p>
+    <p>Thank you!</p><br/>
+    <p><b>ICT Unit</b><br/>
+    <b>Depart of Health - Bicol Center for Health Department</b>
+    </p>
+    
 </body>
 </html>
