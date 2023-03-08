@@ -74,7 +74,7 @@ Route::get('send-mail', function () {
     $details = [
         'title' => 'Greetings!',
         'body' => 'This is to inform you that we have received your request for registration
-        for certification. We will notify you with another email about the result of your submission. Thank you.'
+        for certification. We will notify you with another email about the result of your submission.'
     ];
    
     Mail::to('richfnasayao@gmail.com')->send(new App\Mail\NotificationMail($details));
