@@ -9,7 +9,7 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 // import { Inertia } from '@inertiajs/inertia';
 import Home from './Home.vue';
 import AssessmentTool from './AssessmentTool.vue';
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUpdated } from 'vue'
 
 
 const form = useForm({
@@ -35,7 +35,11 @@ const routes = {
     '/': Home,
 };
 
+const myBrowser = ref()
+
 onMounted(() => {
+    
+
     fetch('/programs').then(response => (
         response.json()
         ).then(response => (
@@ -53,9 +57,14 @@ onMounted(() => {
     ));
 });
 
+
+
 const onChange = (event) => {
             console.log(event.target.value)
         }
+const showMyDiv = () => {
+    console.log(this.$refs.myDiv);
+}
 
 </script>
 
@@ -92,6 +101,8 @@ const onChange = (event) => {
                 >
             </template>
         </div>
+            
+            {{myBrowser}}
         <form @submit.prevent="submit"> 
         <div class="max-w-7xl mx-auto p-6 lg:p-8"> 
            
@@ -112,12 +123,18 @@ const onChange = (event) => {
                     
             </div>
             <br/>
-            <!-- <li v-for="fType in facilityTypes">
-            {{ fType.facilityTypeName }}
-            </li> -->
-           
             <p>Program Name</p>
-            <div class="inline-block relative w-full py-4 flex-1">
+            <label>Choose a browser from this list:
+                <input list="browsers" v-model="myBrowser" name="myBrowser"  />
+            </label>
+                <datalist id="browsers">
+                    <option value="ABTC" />
+                    <option value="TB-DOTS" />
+                </datalist>
+            
+
+
+            <!-- <div class="inline-block relative w-full py-4 flex-1">
                 <select
                 class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                 v-model="form.selected_program"
@@ -133,7 +150,7 @@ const onChange = (event) => {
 
                 </select>
           
-            </div>
+            </div> -->
 
            
 

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('program_id');
             $table->unsignedBigInteger('facility_id');
-            $table->integer('goal_number');
+            $table->bigInteger('goal_id');
             // $table->text('goal_criterion');
             // $table->string('standard_number');
             // $table->text('standard_criterion');

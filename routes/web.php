@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Models\AssessmentTools;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NotificationMail;
+// use App\Mail\MailNotify;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,5 +66,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+// EMAIL NOTIFICATIONS
+Route::get('send-mail', function () {
+   
+    $details = [
+        'title' => 'Mail from ItSolutionStuff.com',
+        'body' => 'This is for testing email using smtp'
+    ];
+   
+    Mail::to('richfnasayao@gmail.com')->send(new App\Mail\NotificationMail($details));
+   
+    // dd("Email is Sent.");
+});
+
+
 
 require __DIR__.'/auth.php';

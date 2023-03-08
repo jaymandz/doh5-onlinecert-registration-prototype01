@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('subgoals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('assessment_tool_id');
-            $table->integer('subgoal_number');
-            // $table->text('criterion');
+            $table->integer('subgoal_id');
+            $table->unsignedBigInteger('goal_id');
             $table->text('evidence_of_progress');
             $table->string('center_rating');    
             $table->text('surveyor_comments');    
             $table->string('surveyor_team_rating');   
-            
+
+            $table->foreign('goal_id')->references('goal_id')->on('assessment_tools');
             $table->foreign('assessment_tool_id')->references('id')->on('assessment_tools');
             $table->timestamps();
         });
