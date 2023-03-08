@@ -6,10 +6,8 @@
 <body>
     <p>{{ $details['title'] }}</p><br/>
     <p>{{ $details['body'] }}</p>
-   
-    <p>Thank you!</p><br/>
 
-
+    <p>King regards, </p><br/><br/>
     <p><b style="font-size:15px; color:blue">Aldrich F. Nasayao</b><br/>
     <b>Computer Programmer I<br/>
     Information and Communications Technology Unit</b><br/>
