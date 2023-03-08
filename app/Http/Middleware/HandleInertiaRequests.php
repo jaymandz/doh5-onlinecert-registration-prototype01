@@ -2,8 +2,11 @@
 
 namespace App\Http\Middleware;
 
+<<<<<<< HEAD
 use App\Models\AssessmentTools;
 use App\Models\FacilityType;
+=======
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -36,10 +39,13 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+<<<<<<< HEAD
             'assessmentTools' => [
                 'selected_program' => $request->selected_program,
                 'health_faci_code' => $request->health_faci_code
             ],
+=======
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
                     'location' => $request->url(),

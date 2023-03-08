@@ -102,6 +102,10 @@ return [
         'syslog' => [
             'driver' => 'syslog',
             'level' => env('LOG_LEVEL', 'debug'),
+<<<<<<< HEAD
+=======
+            'facility' => LOG_USER,
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
         ],
 
         'errorlog' => [

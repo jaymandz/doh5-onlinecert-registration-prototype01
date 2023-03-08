@@ -1,8 +1,14 @@
 <script setup>
 import InputError from '@/Components/InputError.vue';
+<<<<<<< HEAD
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+=======
+import Label from '@/Components/Label.vue';
+import Button from '@/Components/Button.vue';
+import Input from '@/Components/Input.vue';
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 import { Link, useForm, usePage } from '@inertiajs/vue3';
 
 const props = defineProps({
@@ -30,9 +36,15 @@ const form = useForm({
 
         <form @submit.prevent="form.patch(route('profile.update'))" class="mt-6 space-y-6">
             <div>
+<<<<<<< HEAD
                 <InputLabel for="name" value="Name" />
 
                 <TextInput
+=======
+                <Label for="name" value="Name" />
+
+                <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     id="name"
                     type="text"
                     class="mt-1 block w-full"
@@ -46,9 +58,15 @@ const form = useForm({
             </div>
 
             <div>
+<<<<<<< HEAD
                 <InputLabel for="email" value="Email" />
 
                 <TextInput
+=======
+                <Label for="email" value="Email" />
+
+                <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
@@ -82,7 +100,11 @@ const form = useForm({
             </div>
 
             <div class="flex items-center gap-4">
+<<<<<<< HEAD
                 <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+=======
+                <Button :disabled="form.processing">Save</Button>
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 
                 <Transition enter-from-class="opacity-0" leave-to-class="opacity-0" class="transition ease-in-out">
                     <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Saved.</p>

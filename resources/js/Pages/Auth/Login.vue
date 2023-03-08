@@ -1,10 +1,19 @@
 <script setup>
+<<<<<<< HEAD
 import Checkbox from '@/Components/Checkbox.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+=======
+// import Checkbox from '@/Components/Checkbox.vue';
+import GuestLayout from '@/Layouts/GuestLayout.vue';
+import InputError from '@/Components/InputError.vue';
+import Label from '@/Components/Label.vue';
+import Button from '@/Components/Button.vue';
+import Input from '@/Components/Input.vue';
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 defineProps({
@@ -35,9 +44,15 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
+<<<<<<< HEAD
                 <InputLabel for="email" value="Email" />
 
                 <TextInput
+=======
+                <Label for="email" value="Email" />
+
+                <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
@@ -51,9 +66,15 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
+<<<<<<< HEAD
                 <InputLabel for="password" value="Password" />
 
                 <TextInput
+=======
+                <Label for="password" value="Password" />
+
+                <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     id="password"
                     type="password"
                     class="mt-1 block w-full"
@@ -67,7 +88,11 @@ const submit = () => {
 
             <div class="block mt-4">
                 <label class="flex items-center">
+<<<<<<< HEAD
                     <Checkbox name="remember" v-model:checked="form.remember" />
+=======
+                    <!-- <Checkbox name="remember" v-model:checked="form.remember" /> -->
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     <span class="ml-2 text-sm text-gray-600">Remember me</span>
                 </label>
             </div>
@@ -81,9 +106,15 @@ const submit = () => {
                     Forgot your password?
                 </Link>
 
+<<<<<<< HEAD
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in
                 </PrimaryButton>
+=======
+                <Button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Log in
+                </Button>
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
             </div>
         </form>
     </GuestLayout>

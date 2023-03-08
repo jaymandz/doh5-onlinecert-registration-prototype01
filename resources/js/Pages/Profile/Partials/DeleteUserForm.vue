@@ -1,10 +1,18 @@
 <script setup>
+<<<<<<< HEAD
 import DangerButton from '@/Components/DangerButton.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import Modal from '@/Components/Modal.vue';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+=======
+import InputError from '@/Components/InputError.vue';
+import Label from '@/Components/Label.vue';
+import Modal from '@/Components/Modal.vue';
+import Button from '@/Components/Button.vue';
+import Input from '@/Components/Input.vue';
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 import { useForm } from '@inertiajs/vue3';
 import { nextTick, ref } from 'vue';
 
@@ -48,7 +56,11 @@ const closeModal = () => {
             </p>
         </header>
 
+<<<<<<< HEAD
         <DangerButton @click="confirmUserDeletion">Delete Account</DangerButton>
+=======
+        <Button @click="confirmUserDeletion">Delete Account</Button>
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
             <div class="p-6">
@@ -62,9 +74,15 @@ const closeModal = () => {
                 </p>
 
                 <div class="mt-6">
+<<<<<<< HEAD
                     <InputLabel for="password" value="Password" class="sr-only" />
 
                     <TextInput
+=======
+                    <Label for="password" value="Password" class="sr-only" />
+
+                    <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                         id="password"
                         ref="passwordInput"
                         v-model="form.password"
@@ -78,16 +96,26 @@ const closeModal = () => {
                 </div>
 
                 <div class="mt-6 flex justify-end">
+<<<<<<< HEAD
                     <SecondaryButton @click="closeModal"> Cancel </SecondaryButton>
 
                     <DangerButton
+=======
+                    <Button @click="closeModal"> Cancel </Button>
+
+                    <Button
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                         class="ml-3"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
                         @click="deleteUser"
                     >
                         Delete Account
+<<<<<<< HEAD
                     </DangerButton>
+=======
+                    </Button>
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                 </div>
             </div>
         </Modal>

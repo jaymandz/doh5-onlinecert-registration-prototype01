@@ -12,7 +12,11 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
+<<<<<<< HEAD
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+=======
+                sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
             },
         },
     },

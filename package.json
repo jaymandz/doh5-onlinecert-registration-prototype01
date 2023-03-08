@@ -18,8 +18,12 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+<<<<<<< HEAD
         "datatables.net-vue3": "^2.0.0",
         "vue-router": "^4.1.6",
         "vuetify": "^3.1.7"
+=======
+        "@headlessui/vue": "^1.7.12"
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
     }
 }

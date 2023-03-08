@@ -1,9 +1,15 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
+<<<<<<< HEAD
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+=======
+import Label from '@/Components/Label.vue';
+import Button from '@/Components/Button.vue';
+import Input from '@/Components/Input.vue';
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const form = useForm({
@@ -27,9 +33,15 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
+<<<<<<< HEAD
                 <InputLabel for="name" value="Name" />
 
                 <TextInput
+=======
+                <Label for="name" value="Name" />
+
+                <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     id="name"
                     type="text"
                     class="mt-1 block w-full"
@@ -43,9 +55,15 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
+<<<<<<< HEAD
                 <InputLabel for="email" value="Email" />
 
                 <TextInput
+=======
+                <Label for="email" value="Email" />
+
+                <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
@@ -58,9 +76,15 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
+<<<<<<< HEAD
                 <InputLabel for="password" value="Password" />
 
                 <TextInput
+=======
+                <Label for="password" value="Password" />
+
+                <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     id="password"
                     type="password"
                     class="mt-1 block w-full"
@@ -73,9 +97,15 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
+<<<<<<< HEAD
                 <InputLabel for="password_confirmation" value="Confirm Password" />
 
                 <TextInput
+=======
+                <Label for="password_confirmation" value="Confirm Password" />
+
+                <Input
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
                     id="password_confirmation"
                     type="password"
                     class="mt-1 block w-full"
@@ -95,9 +125,15 @@ const submit = () => {
                     Already registered?
                 </Link>
 
+<<<<<<< HEAD
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register
                 </PrimaryButton>
+=======
+                <Button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Register
+                </Button>
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
             </div>
         </form>
     </GuestLayout>

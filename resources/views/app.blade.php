@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
+<<<<<<< HEAD
+=======
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,4 +22,8 @@
     <body class="font-sans antialiased">
         @inertia
     </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a

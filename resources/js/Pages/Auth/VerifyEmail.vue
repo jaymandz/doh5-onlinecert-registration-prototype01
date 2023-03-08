@@ -1,7 +1,11 @@
 <script setup>
 import { computed } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
+<<<<<<< HEAD
 import PrimaryButton from '@/Components/PrimaryButton.vue';
+=======
+import Button from '@/Components/Button.vue';
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
@@ -32,9 +36,15 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
 
         <form @submit.prevent="submit">
             <div class="mt-4 flex items-center justify-between">
+<<<<<<< HEAD
                 <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Resend Verification Email
                 </PrimaryButton>
+=======
+                <Button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Resend Verification Email
+                </Button>
+>>>>>>> 2a9358f0223b1d0dc06d1e62cfb64fd7f75eb88a
 
                 <Link
                     :href="route('logout')"
