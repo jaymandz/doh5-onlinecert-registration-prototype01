@@ -10,8 +10,8 @@
     <p>Thank you!</p><br/>
 
 
-    <p><b>Aldrich F. Nasayao<br/>
-    Computer Programmer I<br/>
+    <p><b style="font-size:15px; color:blue">Aldrich F. Nasayao</b><br/>
+    <b>Computer Programmer I<br/>
     Information and Communications Technology Unit</b><br/>
     <b>Department of Health - Bicol Center for Health Department</b>
     </p>
