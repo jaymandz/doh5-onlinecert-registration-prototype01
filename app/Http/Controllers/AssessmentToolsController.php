@@ -71,7 +71,7 @@ class AssessmentToolsController extends Controller
             'center_rating' => $request->center_rating['center_rating']]
         );
 
-        return $tool;
+        return 1;
 
 
     }

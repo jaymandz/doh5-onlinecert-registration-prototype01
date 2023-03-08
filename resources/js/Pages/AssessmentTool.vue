@@ -41,7 +41,13 @@ const form = useForm({
 const submit = () => {
     form.put(route('assessment-tool.submit_request'), 
     {
-        onFinish: (res) => console.log(res),
+        onFinish: (res) => { 
+            if(res.data != 0) {
+                alert("Assessment has been successfully added.");
+            } else {
+                alert("Assessment submission failed. Please try again.");
+            }
+        }   
     }
     );
 };
