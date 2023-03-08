@@ -22,6 +22,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/assessment-tool', function () {
+    return Inertia::render('AssessmentTool');
+})->name('assessment-tool');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

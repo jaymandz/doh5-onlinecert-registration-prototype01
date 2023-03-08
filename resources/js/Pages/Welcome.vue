@@ -89,10 +89,10 @@ const closeModal = () => {
             <div class="mt-5 flex items-center justify-between space-x-8">
                 <span class="text-xs max-w-xs">Don't have health facility code? Check here at the <a href="https://nhfr.doh.gov.ph/" target="_blank" class="underline text-sky-600">National Health Facility Registry</a></span>
 
-                <a href="/tb-dots-assessment-tool" class="cursor-pointer flex justify-between items-center px-5 py-2 text-sm font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-slate-800 text-white bg-green-700 hover:bg-green-800 focus:ring-green-600 dark:focus:ring-green-600': category === 'primary">
+                <Link :href="route('assessment-tool')" class="cursor-pointer flex justify-between items-center px-5 py-2 text-sm font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-slate-800 text-white bg-green-700 hover:bg-green-800 focus:ring-green-600 dark:focus:ring-green-600': category === 'primary">
                     <Check class="fill-slate-200 h-5 w-5 mr-1" />
                     <span>Proceed</span>
-                </a>
+                </Link>
             </div>
         </form>
     </Modal>
