@@ -1,8 +1,8 @@
 <script setup>
 import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
+import Label from '@/Components/Label.vue';
+import Button from '@/Components/Button.vue';
+import Input from '@/Components/Input.vue';
 import { useForm } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
@@ -45,9 +45,9 @@ const updatePassword = () => {
 
         <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
             <div>
-                <InputLabel for="current_password" value="Current Password" />
+                <Label for="current_password" value="Current Password" />
 
-                <TextInput
+                <Input
                     id="current_password"
                     ref="currentPasswordInput"
                     v-model="form.current_password"
@@ -60,9 +60,9 @@ const updatePassword = () => {
             </div>
 
             <div>
-                <InputLabel for="password" value="New Password" />
+                <Label for="password" value="New Password" />
 
-                <TextInput
+                <Input
                     id="password"
                     ref="passwordInput"
                     v-model="form.password"
@@ -75,9 +75,9 @@ const updatePassword = () => {
             </div>
 
             <div>
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <Label for="password_confirmation" value="Confirm Password" />
 
-                <TextInput
+                <Input
                     id="password_confirmation"
                     v-model="form.password_confirmation"
                     type="password"
@@ -89,7 +89,7 @@ const updatePassword = () => {
             </div>
 
             <div class="flex items-center gap-4">
-                <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+                <Button :disabled="form.processing">Save</Button>
 
                 <Transition enter-from-class="opacity-0" leave-to-class="opacity-0" class="transition ease-in-out">
                     <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Saved.</p>

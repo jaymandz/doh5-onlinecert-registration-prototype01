@@ -1,10 +1,9 @@
 <script setup>
-import DangerButton from '@/Components/DangerButton.vue';
 import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
+import Label from '@/Components/Label.vue';
 import Modal from '@/Components/Modal.vue';
-import SecondaryButton from '@/Components/SecondaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
+import Button from '@/Components/Button.vue';
+import Input from '@/Components/Input.vue';
 import { useForm } from '@inertiajs/vue3';
 import { nextTick, ref } from 'vue';
 
@@ -48,7 +47,7 @@ const closeModal = () => {
             </p>
         </header>
 
-        <DangerButton @click="confirmUserDeletion">Delete Account</DangerButton>
+        <Button @click="confirmUserDeletion">Delete Account</Button>
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
             <div class="p-6">
@@ -62,9 +61,9 @@ const closeModal = () => {
                 </p>
 
                 <div class="mt-6">
-                    <InputLabel for="password" value="Password" class="sr-only" />
+                    <Label for="password" value="Password" class="sr-only" />
 
-                    <TextInput
+                    <Input
                         id="password"
                         ref="passwordInput"
                         v-model="form.password"
@@ -78,16 +77,16 @@ const closeModal = () => {
                 </div>
 
                 <div class="mt-6 flex justify-end">
-                    <SecondaryButton @click="closeModal"> Cancel </SecondaryButton>
+                    <Button @click="closeModal"> Cancel </Button>
 
-                    <DangerButton
+                    <Button
                         class="ml-3"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
                         @click="deleteUser"
                     >
                         Delete Account
-                    </DangerButton>
+                    </Button>
                 </div>
             </div>
         </Modal>
