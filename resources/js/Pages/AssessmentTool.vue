@@ -10,6 +10,9 @@ import Home from './Home.vue';
 import AssessmentTool from './AssessmentTool.vue';
 import { computed } from 'vue';
 import { ref, onMounted, watch } from 'vue';
+import AbtcComponents from './AbtcComponents.vue';
+
+
 
 const props = defineProps({
     canLogin: Boolean,
@@ -83,20 +86,7 @@ const tools_by_faci = ref([]);
 
             <div class="mt-4">
                 <InputLabel for="center_rating">Center Rating</InputLabel>
-                <!-- <TextInput
-                    id="email"
-                    type="text"
-                    class="mt-2 block w-full"
-                    v-model="form.center_rating"
-                /> -->
-                <label v-for="rating in Ratings" :key="rating.data">
-                    <input type="radio" :value="rating.data" v-model="rating.data" @change="onChange($event)"/>
-                    <span>{{ rating.data }}</span>
-                </label>
-
-                    <span>Picked: {{ picked }}</span>
-
-                <!-- <InputError class="mt-2" :message="form.errors.password" /> -->
+                <AbtcComponents ref="center_rating"/>
             </div>
 
            
