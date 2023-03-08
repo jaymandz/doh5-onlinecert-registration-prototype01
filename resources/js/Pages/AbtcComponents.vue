@@ -27,10 +27,6 @@ defineExpose({
 })
 
 
-const switchSelect = (event) => {
-    center_rating = !!event.target.value;
-}
-
 
 const newData = computed(() => usePage().props.assessmentTools);
 
@@ -51,12 +47,9 @@ const tools_by_faci = ref([]);
 
 <template>  
     <div class="mt-16">
-        <label>Non-compliant</label>
-        <input type="radio" name="center_rating" v-model="center_rating" value="0" />
-        <label>Incomplete</label>
-        <input type="radio" name="center_rating" v-model="center_rating" value="1" />
-        <label>Complete</label>
-        <input type="radio" name="center_rating" v-model="center_rating" value="2" /> 
+        <input type="radio" name="center_rating" v-model="center_rating" value="0">Non-compliant
+        <input type="radio" name="center_rating" v-model="center_rating" value="1">Incomplete
+        <input type="radio" name="center_rating" v-model="center_rating" value="2">Complete
     </div>      
 </template>
 
