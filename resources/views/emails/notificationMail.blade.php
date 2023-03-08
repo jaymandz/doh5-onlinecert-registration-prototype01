@@ -5,9 +5,9 @@
 </head>
 <body>
     <p>{{ $details['title'] }}</p><br/>
-    <p>{{ $details['body'] }}</p>
+    <p>{{ $details['body'] }}</p><br/>
 
-    <p>King regards, </p><br/><br/>
+    <p style="font-size:15px">Kind regards, </p><br/>
     <p><b style="font-size:15px; color:blue">Aldrich F. Nasayao</b><br/>
     <b>Computer Programmer I<br/>
     Information and Communications Technology Unit</b><br/>
