@@ -1,6 +1,7 @@
 <script setup>
 import Label from '@/Components/Label.vue';
-import Radio from '@/Components/Radio.vue'
+import Textarea from '@/Components/Textarea.vue';
+import Radio from '@/Components/Radio.vue';
 
 defineProps({
     id: {
@@ -13,27 +14,34 @@ defineProps({
 </script>
 
 <template>
-    <div class="flex flex-col mt-2">
-        <Label value="DOTS Center Rating*" />
-        <div class="flex items-center space-x-2 mt-1">
-            <div class="relative flex items-center space-x-2">
-                <Radio :id="set + '-none-achievement-' + id" />
-                <Label :for="set + '-none-achievement-' + id" value="None Achievement" />
-            </div>
+    <div class="grid mt-1">
+        <div class="relative">
+            <Label value="Evidence of Progress and Achievements" />
+            <Textarea />
+        </div>
 
-            <div class="relative flex items-center space-x-2">
-                <Radio :id="set + '-low-achievement-' + id" />
-                <Label :for="set + '-low-achievement-' + id" value="Low Achievement" />
-            </div>
+        <div class="flex flex-col mt-2">
+            <Label value="DOTS Center Rating*" />
+            <div class="flex items-center space-x-2 mt-1">
+                <div class="relative flex items-center space-x-2">
+                    <Radio :id="set + '-NA-' + id" />
+                    <Label class="text-sm font-semibold" :for="set + '-NA-' + id" value="None Achievement" />
+                </div>
 
-            <div class="relative flex items-center space-x-2">
-                <Radio :id="set + '-moderate-achievement-' + id" />
-                <Label :for="set + '-moderate-achievement-' + id" value="Moderate Achievement" />
-            </div>
+                <div class="relative flex items-center space-x-2">
+                    <Radio :id="set + '-LA-' + id" />
+                    <Label class="text-sm font-semibold" :for="set + '-LA-' + id" value="Low Achievement" />
+                </div>
 
-            <div class="relative flex items-center space-x-2">
-                <Radio :id="set + '-extensive-achievement-' + id" />
-                <Label :for="set + '-extensive-achievement-' + id" value="Extensive Achievement" />
+                <div class="relative flex items-center space-x-2">
+                    <Radio :id="set + '-MA-' + id" />
+                    <Label class="text-sm font-semibold" :for="set + '-MA-' + id" value="Moderate Achievement" />
+                </div>
+
+                <div class="relative flex items-center space-x-2">
+                    <Radio :id="set + '-EA-' + id" />
+                    <Label class="text-sm font-semibold" :for="set + '-EA-' + id" value="Extensive Achievement" />
+                </div>
             </div>
         </div>
     </div>
