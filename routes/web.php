@@ -50,7 +50,7 @@ Route::get('/facilities', [FacilitiesController::class, 'index']);
 // Route::get('/assessment-tool', [AssessmentToolsController::class, 'index'])->name('assessment-tool.show');
 
 Route::get('/assessment-tool', [AssessmentToolsController::class, 'index'])->name('assessment-tool.retrieve');
-
+Route::put('/assessment-tool', [AssessmentToolsController::class, 'update'])->name('assessment-tool.submit_request');
 // Route::post('/assessment-tool', function (Request $request) {  
 //     return Inertia::render('AssessmentTool', [
 //                'assessmentTool' => $request

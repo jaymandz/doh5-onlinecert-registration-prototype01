@@ -25,21 +25,30 @@ const props = defineProps({
 
 
 const centerData = ref(0)
+onMounted(
+
+)
+
+
+const tool_id = ref()
 
 const form = useForm({
+    tool_id: props.tools.id,
     evidence_of_progress: '',
-    // center_rating: ''
+    center_rating: centerData
 });
 
 const submit = () => {
-    form.post(route('login'), {
-        onFinish: () => form.reset('password'),
-    });
+    form.put(route('assessment-tool.submit_request'), 
+    {
+        onFinish: (res) => console.log(res),
+    }
+    );
 };
 
-// const onChange = (event) => {
-//     centerData.value = 
-// }
+onMounted(
+    console.log(props.tools.id)
+)
 
 
 const newData = computed(() => usePage().props.assessmentTools);
@@ -51,8 +60,6 @@ const routes = {
     '/': Home,
     '/assessment-tool': AssessmentTool
 }
-
-const tools_by_faci = ref([]);
 
 </script>
 
@@ -66,7 +73,9 @@ const tools_by_faci = ref([]);
             <div class="mt-16">
                <b><label for="assessment-tool">ASSESSMENT TOOL</label></b><br/><br/><br/>
                 <div>
-                
+                    {{ tools.id }}
+                    {{ tool_id }}
+                <input type="hidden" v-model="tools.id" name="tool_id" id="tool_id" />
                 <label for="assessment-tool">Facility Name: {{facility_data.facility_name}} </label><br/><br/>
                 <label for="assessment-tool">GOAL: {{tools.goal_criterion}} </label><br/><br/>
                 <InputLabel for="evid_progress">Evidence of Progress and Achievements</InputLabel>
@@ -86,9 +95,13 @@ const tools_by_faci = ref([]);
                  {{ centerData }}
             </div>
 
+            
            
 
             <div class="flex items-center justify-end mt-4">
+                <PrimaryButton class="ml-4" type="submit">
+                    SUBMIT REQUEST
+                </PrimaryButton>
             </div>
         <!-- </div> -->
              

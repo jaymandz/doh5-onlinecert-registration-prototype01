@@ -63,9 +63,17 @@ class AssessmentToolsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAssessmentToolsRequest $request, AssessmentTools $assessmentTools)
+    public function update(Request $request)
     {
-        //
+        // dd($request);
+        $tool = AssessmentTools::where('id', $request->tool_id)->update(
+            ['evidence_of_progress' => $request->evidence_of_progress,
+            'center_rating' => $request->center_rating['center_rating']]
+        );
+
+        return $tool;
+
+
     }
 
     /**
