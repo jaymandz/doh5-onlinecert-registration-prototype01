@@ -20,9 +20,15 @@ const props = defineProps({
     facility_data: Object
 });
 
-var center_rating = ref(0)
+// var ratingValues = ref({
+//     center_rating: 0,
+//     center_rating_sub: []
+// })
+
+var center_rating = ref()
 
 defineExpose({
+//    ratingValues,
     center_rating
 })
 
@@ -38,19 +44,46 @@ const routes = {
     '/assessment-tool': AssessmentTool
 }
 
-const tools_by_faci = ref([]);
-
-
 
 
 </script>
 
 <template>  
+    <label>Goal</label>
+    <p>The TB DOTS center is easily located and patients have convenient and safe access to the center.</p>
+      <label>Criterion</label>
+    <p>The center is easily accessible inside the hospital premises through signages posted.</p>
+     <InputLabel for="center_rating">Center Rating</InputLabel>
     <div class="mt-16">
         <input type="radio" name="center_rating" v-model="center_rating" value="0">Non-compliant
         <input type="radio" name="center_rating" v-model="center_rating" value="1">Incomplete
         <input type="radio" name="center_rating" v-model="center_rating" value="2">Complete
     </div>      
+    <!-- <label>Standards are achieven when:</label>
+    <p>There is appropriate signage bearing the name of the TB DOTS center to assist patients accessing the center.</p>
+    <div class="mt-16">
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="0">Non-compliant
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="1">Incomplete
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="2">Complete
+    </div>
+    <p>Physical access is appropriate for the needs of patients.</p>
+     <div class="mt-16">
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="0">Non-compliant
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="1">Incomplete
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="2">Complete
+    </div>
+    <p>Entrances and exits are clearly marked and free of obstruction and other hazardous conditions.</p>
+     <div class="mt-16">
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="0">Non-compliant
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="1">Incomplete
+        <input type="radio" name="center_rating_sub" v-model="center_rating_sub" value="2">Complete
+    </div>
+    <p>There are resources to inform patients of the daily and hourly schedule of TB DOTS services </p>
+     <div class="mt-16">
+        <input type="radio" name="center_rating" v-model="center_rating_sub" value="0">Non-compliant
+        <input type="radio" name="center_rating" v-model="center_rating_sub" value="1">Incomplete
+        <input type="radio" name="center_rating" v-model="center_rating_sub" value="2">Complete
+    </div> -->
 </template>
 
 <style>

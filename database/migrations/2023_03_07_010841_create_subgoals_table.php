@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('subgoals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('assessment_tool_id');
-            // $table->string('standard_number');
+            $table->integer('subgoal_number');
             // $table->text('criterion');
             $table->text('evidence_of_progress');
             $table->string('center_rating');    

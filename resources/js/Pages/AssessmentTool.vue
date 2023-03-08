@@ -24,18 +24,15 @@ const props = defineProps({
 });
 
 
-const centerData = ref(0)
-onMounted(
-
-)
-
+const centerData = ref({})
 
 const tool_id = ref()
 
 const form = useForm({
     tool_id: props.tools.id,
     evidence_of_progress: '',
-    center_rating: centerData
+    center_rating: centerData.center_rating,
+    center_rating_sub: centerData.center_rating_sub
 });
 
 const submit = () => {
@@ -96,7 +93,7 @@ const routes = {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="center_rating">Center Rating</InputLabel>
+               
                 <AbtcComponents ref="centerData" />
                  {{ centerData }}
             </div>

@@ -14,6 +14,7 @@ class AssessmentToolsSeeder extends Seeder
     public function run(): void
     {
         $data = ([
+            'id' => '1',
             'program_id' => '1', //ABTC
             'facility_id' => '1',
             // 'goal_number' => '1',

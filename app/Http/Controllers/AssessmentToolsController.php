@@ -6,6 +6,7 @@ use App\Models\AssessmentTools;
 use App\Http\Requests\StoreAssessmentToolsRequest;
 use App\Http\Requests\UpdateAssessmentToolsRequest;
 use App\Models\Facilities;
+use App\Models\Subgoals;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 class AssessmentToolsController extends Controller
@@ -65,13 +66,26 @@ class AssessmentToolsController extends Controller
      */
     public function update(Request $request)
     {
-        // dd($request);
-        $tool = AssessmentTools::where('id', $request->tool_id)->update(
-            ['evidence_of_progress' => $request->evidence_of_progress,
-            'center_rating' => $request->center_rating['center_rating']]
-        );
 
-        return 1;
+       // dd($request);
+        // $tool = AssessmentTools::where('id', $request->tool_id)->update(
+        //     ['evidence_of_progress' => $request->evidence_of_progress,
+        //     'center_rating' => $request->center_rating['center_rating']]
+        // );
+
+        // $tool2 = Subgoals::where([
+        //     ['id', $request->subgoal_id],
+        //     ['asessment_tool_id', $request->tool_id]
+        // ],
+        // )->update(
+        //     ['evidence_of_progress' => $request->evidence_of_progress_sub,
+        //     'center_rating' => $request->center_rating_sub['center_rating_sub']]
+        // );
+
+        // return Inertia::render([
+        //     'toolMain' => $tool,
+        //     'subGoals' => $tool2
+        // ]);
 
 
     }
